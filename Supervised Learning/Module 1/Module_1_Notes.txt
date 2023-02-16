@@ -1,0 +1,219 @@
+Applications
+-	Health care, self driving cars, recommendation, voice recognition, computer vision
+-	Machine learning will touch pretty much every industry
+-	AGI (Artificial general intelligence) Machines that are as smart as human beings
+-	Ai will have so much value outside of the software industry
+-	AI IS THE FUTURE 
+-	“Field of study that gives computers the ability learn without being explicitly programmed
+-	Supervised Learning
+-	Unsupervised Learning
+-	Supervised learning has rapid advancements, used most in real world applications
+-	Recommender systems are used more than reinforcement learning
+-	Practical advice for applying learning algorithms
+-	Make sure we learn how to use our tools of machine learning, rather than just learning about them
+SUPERVISED LEARNING PART 1
+-	99% of Machine learning value has come from supervised learning
+-	Algorithms that learn from x to y mappings
+-	Give learning algorithm examples to learn from
+-	Give them inputs and output and train algorithm to get better at finding proper y output
+-	Email x to output spam or not
+-	Audio to text tanscript input output
+-	Give some sort of data and map it to something else
+-	Online advertising, input information about ad, input information of user information, and the algorithm decides whether you would click it or not
+-	So many applications of mapping a given x to y with machine learning
+-	Image of phone x, is there a defect or not y. Visual inspection
+-	Train you models with input x with the correct label y
+-	Once trained, takes a new x, it has never seen before, and guess what y would be
+-	Regression: Housing prices
+-	House size in square feet vs price of that house
+-	Fit a straight line in real data
+-	When using new x, we can put that x on the regressed line, and find what the y would be for that x
+-	Doesn’t have to be a straight line, can be more complicated best function of fit
+-	Machine learning learns from previous data and predicts things for new data
+-	Learning algorithms try to predict new answers, that is the purpose
+-	This is supervised learning, this type of supervised learning is called regression
+-	Regression is to predict a number from infinitely possible numbers
+-	Regression is predict a number
+-	Breast cancer detection
+-	To figure out if a tumor is dangerous or benign
+-	Data set could be tumors of different sizes
+-	They could be either benign or dangerous
+-	We can graph our data 
+-	This is different from regression because there is a limited range for our y value
+-	Regression predictds a singular number from infinitely possible numbers
+-	So this problem of breast cancer is not regression
+-	This is a classification problem, not regression
+-	Classification has output classes/categories
+-	What about if we have more than 1 input??
+-	We can use more than 1 input to predict an output
+-	What if you also had age and tumor size instead of just tumor size
+-	If it’s like this, our learning algorithm can find a boundary line which separates our two different outputs
+-	Often, we have many more inputs, thickness of clump, uniformity of cell size, etc.
+
+-	There are two main ways to do supervised learning
+-	Regression and Classification!!!! Remember them well
+-	Regression predicts a number as our output from an infinitely possible range of values
+-	While classification predicts CATEGORIES/CLASSES (not necessarily a number) from a small number of possible outputs
+Unsupervised learning
+-	Unsupervised learning just as super as supervised learning! – Andrew ng
+-	Given data that isn’t associated with any output
+-	Given data about age, tumor size, but not whether or not that data is associated with whether or not the tumor was dangerous or benign
+-	Our job is to find a pattern or observation in the data
+-	It is called unsupervised because we are not trying to tell our learning algorithm if something is correct or not, but to find out if there is anything interesting to note in our data
+-	Clustering is used in google news
+-	Clustering algorithm is finding data that share properties. Remember that word, clustering algorithm which is unsupervised learning
+-	Clustering DNA microarray
+-	Each column represents a different person
+-	Each gene is ordered properly
+-	Dna microarray is to find patterns using unsupervised learning
+-	Unsupervised learning finds it’s own classes and characteristics , we don’t tell our learning algorithm what is correct or not
+-	Clustering grouping customers
+-	Classifying customers based on the motive they have, finding patterns like this can help us serve our customers more efficiently
+-	Unsupervised learning meaning: data comes with inputs x but no associated ys
+-	Algorithm has to find structure in data
+
+-	WE will learn 3 types of unsupervised learning, CLUSTERING, ANOMALY DETECTION (find unusual data), DIMENSIONALITY REDUCTION, compress big data to smaller data sets while preserving as much significant information as possible
+-	We will use jupyter notebooks going forward WOOOO
+
+REGRESSION MODEL
+-	Most widely supervised machine learning model used in the world
+-	Predict price of house based on size of house 
+-	Plot data points using their real x value we have (size of house in square feet), and using the real y value we have (price of house)
+-	Build a linear regression model, and you can estimate y values for any x value given using that linear regression model
+-	This is supervised learning because we give our data right answers to learn from and use to predict answers for any x value
+-	Linear regression is not the only regression model used to train learning algorithms, there are other regression functions that can be used as well
+-	The other type of supervised model is classification model
+-	Notation to describe data!!!!!
+-	TERMINOLOGY to describe machine learning concepts
+-	You will be seeing these notations a lot
+-	Data used to train model is called Training set
+-	Input is notated by lowercase x, which is our input variable, or feature variable
+-	Output is notated by lower case y, which is called our output variable or target variable
+-	Training example, lower case m is the size of our training examples. (x, y) is a single training example.
+-	(xi, yi), i refers to a singular training example, where i is an arbitrary number from the range 1 to m (I think)
+-	TRAINING SET!!!!!! 
+-	Features -> targets
+-	Give training set to our learning algorithm
+-	Our learning algorithm then produces a function f
+-	f can take a new input x and output a prediction based on our training set.
+-	We will notate our estimate as y hat, looks like vector notation
+-	x here is our feature, y hat is our prediction 
+-	Target is y, prediction is y hat
+Key question: how do we represent f?
+-	Assume f can be written as fw,b(x) = wx + b, where w is our weight and b is our bias
+-	We will look at linear regression first and jump onto more complex functions
+-	We are now looking at a linear regression with only one variable 
+-	If a linear regression has one variable, it can be classified as univariate linear regression
+COST FUNCTION
+-	Simple linear function stuff, plotting data points, how slope works, how y intercept works
+-	The question is, how do we find the best w and b?
+-	Where y hat is closest to y for all (x, y)
+-	COST FUNCTION takes y hat and compares it to y. (Y-hat – y)^2 gives us the error
+-	We take a summation for all the training examples 
+-	We then get the total error for all points compares to its prediction from the true output 
+-	There is an extra division by 2 to make things neater, not needed for the cost function but could be there
+-	Squared error cost function is the name of this cost function, and is the most commonly used cost function for linear regression
+-	Cost function is used to measure how good our prediction function is, namely fwb
+COST FUNCTION INTUITION
+-	We have parameters for our function, w and b
+-	To measure how good our w and b parameters are, we have a cost function
+-	Our cost function has a summation of all the predictions for x values for which we have true values for subtracted by the actual true values, we then square the value of this subtraction, and do the same for each of our data points in our training set for the summation, after the summation we divide the result by 2*m, where m is the size of our data set.
+-	The goal is to minimize the value of our cost function as much as possible, since the smaller our cost function the better our w and b parameters are.
+
+-	We are looking at Fw without the b variable so we can understand how the cost function relates to the Fw function. 
+-	Changing the values of w gives us different lines that have different errors compared to our dataset
+-	Since the cost function is a function of w, we can take our cost function results for each w and plot them on a separate graph
+-	Plot what the cost function is when w is 0, 1, 2, etc.
+-	Use our findings to compare our original linear regression function fw with our J(W)
+-	J(x) is a parabola function compared to our linear function Fw
+-	So I guess finding the minimum value of our cost function gives us the best w value, since the minimum value of the parabola minimizes our cost function, which in turn means we have the best w possible
+-	Goal of linear regression: MINIMIZE J(W)
+-	When you have w and b, find the values of both w and b which minimizes our cost
+
+
+VISUALIZING COST FUNCTION
+-	Back to house size and house price
+-	Let’s model a fwb function with w as 0.06 and b as 50.
+-	Let us find the cost function J(0.06, 50)
+-	With J having 2 parameters now, our j function still looks like a parabola shaped function, but it is now in three dimensions, as b takes a new axis of dimension, w takes an axis of dimension, and so does the actual cost, J(w, b)
+-	Looks like a soup bowl, or a place to relax lol
+-	The height where b and w meet is what our J is
+-	Contour lines, where elevation is the same throughout the entire line
+-	Contour plots, take horizontal slices that are at the same height
+-	Take those slices and put plot them as contour plots in our 2d plane which has w and b
+-	Where the minimum contour plot is that is the minimum cost is for those w and b values
+-	Contour plots are a way to VISUALIZE the 3d cost function in a 2d plane
+
+We will dive into gradient descent next!
+GRADIENT DESCENT
+-	Gradient descent is an algorithm is a way to minimize cost functions?
+-	IMPORTANT BUILDING BLOCK IN MACHINE LEARNING
+-	Gradient descent is an algorithm that minimizes ANY FUNCTION DAMN NOT JUST COST FUNCTION
+-	Gradient descent applies to general cost functions that have more than 2 parameters
+-	How to do:
+-	We want to minimize our cost function J(w, b)
+-	Pick some guess w and b 
+-	For example, set w to 0 and b to 0
+-	Keep changing w and b until our cost function is near minimum
+-	We want to pick values from w1 to Wn, and b values that minimize the cost function as much
+-	There may be cases where there can be more than 1 possible minimum
+-	Gradient descent looks around at the next best step to get closer to the minimum 
+-	We slowly slowly make progress to the minimum
+-	Eventually, we will get to a minimum
+-	Gradient descent has an interesting property
+-	Where we start makes a difference
+-	We can end up at different local minima depending on where we start
+IMPLEMENTING GRADIENT DESCENT
+-	Gradient descent algorithm:
+-	w = w – alpha – integral of cost function?? (I think)
+-	What is alpha?
+-	Why do we take the integral?
+-	The equal sign we are using here means the value of w will be assigned to the new value which is w – alpha – integral of cost function
+-	Alpha is called the learning rate
+-	Learning rate is usually a small positive number between 0-1
+-	Controls how big of a “step” we take
+-	Now I understand what descent means?
+-	Integral means derivative 
+-	We will dive into some calculus to understand the gradient descent function
+-	The same assignment operator will be used for b in the gradient descent
+-	We do both of these descents until we reach convergence
+-	Important detail: Simultaneously update w and b at the same time
+-	To do this, compute both RHS together before using the assignment operator, and then after both integrals are computed and subtracted, then do the assignment operation.
+-	We create temporary variables which store the values of the w – alpha*derivative and b – alpha * derivative values
+-	Once both calculations are done and assigned to their temporary variables, we then assign w and b to these temp variables ONLY AFTER
+Gradient Descent Intuition:
+-	Remember, learning rate controls our steps
+-	We are using partial derivative, not the full derivative
+-	Let’s look at cost function with only one parameter
+-	The derivative can be thought of like this: Draw a tangent to the point where you are at (based on w and b) and calculate the slope of the tangent at that point. The slope is the derivative at that point for J(w, b) (Right now we are only looking at J(w) though)
+Learning Rate Alpha
+-	w = w – alpha * derivative of cost function
+-	if the learning rate is too small, the steps we take are very slow and tiny, takes us a while to get to our minimum, slowing down our gradient descent algorithm
+-	if the learning rate is too large, we may take our steps too big, and we can miss out on the minimum value, can even result in getting further and further away from the minimum
+-	Large gradient descent will fail to converge, and may even diverge, in more complex terms
+-	What will gradient descent do if we get to a local minimum but not maximum?
+-	If we are at a local minimum, the derivative at that point would be 0, which then would mean our alpha * derivative term is 0, and the assignment operator would look like w = w
+-	Gradient descent will just use the local minimum as the solution, even with a fixed learning rate alpha
+-	Gradient descent only finds the local minimum, could be the best answer but there also could be better w/b values
+Gradient Descent for Linear Regression
+-	For linear regression, our gradient descent formulas would look like:
+-	w = w – alpha * derivative of J(w, b)
+-	b = b – alpha * derivative of J(w, b)
+-	Derivative functions are given to us, derived from calculus.
+-	Calculation of derivative term
+-	Very similar to the j(w,b) functions except the derivative of w function has an x(i) at the end that we multiply in the summation and the divisor is now m instead of 2m
+-	Same as above except we do not multiply by x(i) for each summation
+Gradient descent algorithm
+-	While not convergence {
+-	Update w and b with the equations we have established which are, w – alpha * derivative (which is listed above, and b equation is same as w equation with the difference of the x(i) multiplication
+-	Remember that gradient descent will only find local minimum
+-	Also, squared error cost functions only ever have 1 global minimum as they follow a bowl shaped structure
+Running gradient descent
+-	Examples of how it runs and its iterations shown
+Lab for linear regression using gradient descent
+-	We create our cost function
+-	We create our gradient function which calculates the derivative of w and b
+-	Our linear regression gradient descent function uses both of these functions and returns to us the best w and b parameters, which minimizes our cost function
+-	Be careful of choosing too high values for our learning rate alpha, can mislead our gradient descent to diverge instead of converge
+MODEL 1 IS COMPLETE! – Feb 15th, 2023
+
